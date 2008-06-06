@@ -1,0 +1,5 @@
+inherit gnome2
+
+DESCRIPTION="GNOME text editor"
+
+CYGCONF_ARGS="--enable-python --disable-attr"

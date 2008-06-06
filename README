@@ -7,47 +7,44 @@ use of the GNOME help system, the GNOME Virtual File System and the
 GNOME print framework.
 
 Runtime requirements:
-  cygwin-1.5.24-2
-  GConf2-2.20.1-1
-  atk-1.20.0-1
-  enchant-1.3.0-1
-  gdk-pixbuf2-2.12.2-1
-  glib2-2.14.4-1
-  gnome-vfs2-2.20.1-1
-  gtk2-x11-2.12.2-1
-  gtksourceview2-2.0.2-1
+  cygwin-1.5.25-11
+  atk-1.22.0-1
+  enchant-1.4.2-1
+  gdk-pixbuf2-2.12.9-1
+  GConf2-2.22.0-1
+  glib2-2.16.3-1
+  gnome-vfs2-2.22.0-1
+  gtk2-x11-2.12.9-1
+  gtksourceview2-2.2.1-1
   libX11_6-1.1.3-1
-  libart_lgpl2-2.3.19-1
+  libart_lgpl2-2.3.20-1
   libglade2-2.6.2-1
-  libgnome2-2.20.1.1-1
-  libgnomecanvas2-2.20.1.1-1
-  libgnomeprint22-2.18.2-1
-  libgnomeprintui22-2.18.1-1
-  libgnomeui2-2.20.1.1-1
+  libgnome2-2.22.0-1
+  libgnomeui2-2.22.1-1
   libintl8-0.15-1
-  libxml2-2.6.30-1
-  pango-1.18.3-1
-  python-2.5.1-3
-  python-gobject2-2.14.0-1
-  python-gtk2-2.12.0-1
-  python-gtksourceview2-2.0.0-1
+  libxml2-2.6.32-1
+  pango-1.20.3-1
+  python-2.5.2-1
+  python-gobject2-2.14.2-1
+  python-gtk2-2.12.1-1
+  python-gtksourceview2-2.2.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  cygwin-1.5.24-2
   autoconf2.5-2.61-1
-  automake1.10-1.10-1
-  binutils-20060817-1
-  cygport-0.3.7-1
-  gawk-3.1.5-4
+  automake1.10-1.10.1-1
+  binutils-20080523-1
+  cygport-0.3.11-1
+  gawk-3.1.6-1
   gcc-core-3.4.4-3
-  gnome-common-2.20.0-1
-  gnome-doc-utils-0.12.0-1
-  intltool-0.36.2-1
-  libtool1.5-1.5.23a-2
+  gettext-devel-0.15-1
+  gnome-common-2.20.0-2
+  gnome-doc-utils-0.12.2-1
+  intltool-0.37.1-1
+  libtool-2.2.2-2
   make-3.81-1
   pkg-config-0.21-1
-  rarian-0.6.0-1
+  rarian-0.8.0-1
   sed-4.1.5-2
 
 Canonical website:
@@ -59,15 +56,15 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gedit-2.20.4-1-src.tar.bz2
+  unpack gedit-2.22.3-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gedit-2.20.4-1.cygport all
+  cygport ./gedit-2.22.3-1.cygport all
 
 This will create:
-  /usr/src/gedit-2.20.4-1-src.tar.bz2
-  /usr/src/gedit-2.20.4-1.tar.bz2
+  /usr/src/gedit-2.22.3-1-src.tar.bz2
+  /usr/src/gedit-2.22.3-1.tar.bz2
 
 -------------------------------------------
 
@@ -100,7 +97,6 @@ Files included in the binary package:
   /usr/include/gedit-2.20/gedit/gedit-utils.h
   /usr/include/gedit-2.20/gedit/gedit-view.h
   /usr/include/gedit-2.20/gedit/gedit-window.h
-  /usr/lib/gedit-2/gedit-bugreport.sh
   /usr/lib/gedit-2/plugins/changecase.gedit-plugin
   /usr/lib/gedit-2/plugins/cygchangecase.dll
   /usr/lib/gedit-2/plugins/cygdocinfo.dll
@@ -207,21 +203,21 @@ Files included in the binary package:
   /usr/lib/gedit-2/plugins/time.gedit-plugin
   /usr/lib/libgedit-2.20.a
   /usr/lib/pkgconfig/gedit-2.20.pc
+  /usr/sbin/gedit-2/gedit-bugreport.sh
   /usr/share/applications/gedit.desktop
-  /usr/share/doc/Cygwin/gedit-2.20.4.README
-  /usr/share/doc/gedit-2.20.4/AUTHORS
-  /usr/share/doc/gedit-2.20.4/BUGS
-  /usr/share/doc/gedit-2.20.4/COPYING
-  /usr/share/doc/gedit-2.20.4/ChangeLog
-  /usr/share/doc/gedit-2.20.4/INSTALL
-  /usr/share/doc/gedit-2.20.4/MAINTAINERS
-  /usr/share/doc/gedit-2.20.4/NEWS
-  /usr/share/doc/gedit-2.20.4/README
+  /usr/share/doc/gedit-2.22.3/AUTHORS
+  /usr/share/doc/gedit-2.22.3/BUGS
+  /usr/share/doc/gedit-2.22.3/COPYING
+  /usr/share/doc/gedit-2.22.3/ChangeLog
+  /usr/share/doc/gedit-2.22.3/INSTALL
+  /usr/share/doc/gedit-2.22.3/MAINTAINERS
+  /usr/share/doc/gedit-2.22.3/NEWS
+  /usr/share/doc/gedit-2.22.3/README
   /usr/share/gedit-2/glade/docinfo.glade2
   /usr/share/gedit-2/glade/gedit-encodings-dialog.glade
   /usr/share/gedit-2/glade/gedit-open-location-dialog.glade
-  /usr/share/gedit-2/glade/gedit-page-setup-dialog.glade
   /usr/share/gedit-2/glade/gedit-preferences-dialog.glade
+  /usr/share/gedit-2/glade/gedit-print-preferences.glade
   /usr/share/gedit-2/glade/gedit-search-dialog.glade
   /usr/share/gedit-2/glade/languages-dialog.glade2
   /usr/share/gedit-2/glade/sort.glade2
@@ -343,6 +339,14 @@ Files included in the binary package:
   /usr/share/gnome/help/gedit/oc/figures/gedit_window.png
   /usr/share/gnome/help/gedit/oc/gedit.xml
   /usr/share/gnome/help/gedit/oc/legal.xml
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_format_bold.png
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_format_italic.png
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_format_strikethrough.png
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_format_underline.png
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_recent_files_menu_icon.png
+  /usr/share/gnome/help/gedit/pt_BR/figures/gedit_window.png
+  /usr/share/gnome/help/gedit/pt_BR/gedit.xml
+  /usr/share/gnome/help/gedit/pt_BR/legal.xml
   /usr/share/gnome/help/gedit/ro/figures/gedit_window.png
   /usr/share/gnome/help/gedit/ro/gedit.xml
   /usr/share/gnome/help/gedit/ro/legal.xml
@@ -402,14 +406,14 @@ Files included in the binary package:
   /usr/share/gtk-doc/html/gedit/GeditNotebook.html
   /usr/share/gtk-doc/html/gedit/GeditPanel.html
   /usr/share/gtk-doc/html/gedit/GeditPlugin.html
-  /usr/share/gtk-doc/html/gedit/GeditPrintJob.html
-  /usr/share/gtk-doc/html/gedit/GeditPrintJobPreview.html
   /usr/share/gtk-doc/html/gedit/GeditProgressMessageArea.html
   /usr/share/gtk-doc/html/gedit/GeditStatusbar.html
   /usr/share/gtk-doc/html/gedit/GeditTab.html
   /usr/share/gtk-doc/html/gedit/GeditView.html
   /usr/share/gtk-doc/html/gedit/GeditWindow.html
   /usr/share/gtk-doc/html/gedit/ch01.html
+  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
+  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJobPreview.html
   /usr/share/gtk-doc/html/gedit/gedit-gedit-convert.html
   /usr/share/gtk-doc/html/gedit/gedit-gedit-debug.html
   /usr/share/gtk-doc/html/gedit/gedit-gedit-encodings.html
@@ -430,6 +434,7 @@ Files included in the binary package:
   /usr/share/locale/af/LC_MESSAGES/gedit.mo
   /usr/share/locale/am/LC_MESSAGES/gedit.mo
   /usr/share/locale/ar/LC_MESSAGES/gedit.mo
+  /usr/share/locale/as/LC_MESSAGES/gedit.mo
   /usr/share/locale/az/LC_MESSAGES/gedit.mo
   /usr/share/locale/be/LC_MESSAGES/gedit.mo
   /usr/share/locale/be@latin/LC_MESSAGES/gedit.mo
@@ -522,6 +527,7 @@ Files included in the binary package:
   /usr/share/omf/gedit/gedit-ja.omf
   /usr/share/omf/gedit/gedit-ko.omf
   /usr/share/omf/gedit/gedit-oc.omf
+  /usr/share/omf/gedit/gedit-pt_BR.omf
   /usr/share/omf/gedit/gedit-ro.omf
   /usr/share/omf/gedit/gedit-ru.omf
   /usr/share/omf/gedit/gedit-sv.omf
@@ -533,6 +539,9 @@ Files included in the binary package:
 ------------------
 
 Port Notes:
+
+----- version 2.22.3-1 -----
+Version bump for GNOME 2.22.
 
 ----- version 2.20.4-1 -----
 Version bump for GNOME 2.20.
