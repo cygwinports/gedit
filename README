@@ -9,22 +9,22 @@ GNOME print framework.
 Runtime requirements:
   cygwin-1.5.25-15
   libatk1.0_0-1.24.0-1
-  libcairo2-1.8.4-1
+  libcairo2-1.8.6-1
   libenchant1-1.4.2-2
   libgconf2_4-2.24.0-1
-  libgdk_pixbuf2.0_0-2.14.5-1
-  libglib2.0_0-2.18.3-1
-  libgtk2.0_0-2.14.5-1
-  libgtksourceview2.0_0-2.4.1-1
+  libgdk_pixbuf2.0_0-2.14.7-1
+  libglib2.0_0-2.18.4-1
+  libgtk2.0_0-2.14.7-1
+  libgtksourceview2.0_0-2.4.2-1
   libICE6-1.0.4-2
   libintl8-0.17-2
-  libpango1.0_0-1.22.3-1
+  libpango1.0_0-1.22.4-1
   libSM6-1.1.0-1
-  libX11_6-1.1.5-1
-  libxml2-2.7.2-1
-  python-2.5.2-4
-  python-gobject2-2.15.4-1
-  python-gtk2-2.13.0-1
+  libX11_6-1.1.5-2
+  libxml2-2.7.3-1
+  python-2.5.4-1
+  python-gobject2-2.16.0-1
+  python-gtk2-2.14.0-1
   python-gtksourceview2-2.4.0-1
 
 Build requirements:
@@ -37,7 +37,7 @@ Build requirements:
   gcc-core-3.4.4-3
   gettext-devel-0.17-2
   gnome-common-2.24.0-1
-  gnome-doc-utils-0.14.0-1
+  gnome-doc-utils-0.14.2-1
   intltool-0.40.5-1
   libtool-2.2.6a-1
   make-3.81-1
@@ -54,47 +54,28 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gedit-2.24.2-1-src.tar.bz2
+  unpack gedit-2.24.3-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gedit-2.24.2-1.cygport all
+  cygport ./gedit-2.24.3-1.cygport all
 
 This will create:
-  /usr/src/gedit-2.24.2-1-src.tar.bz2
-  /usr/src/gedit-2.24.2-1.tar.bz2
+  /usr/src/gedit-2.24.3-1-src.tar.bz2
+  /usr/src/gedit-2.24.3-1.tar.bz2
+  /usr/src/gedit-devel-2.24.3-1.tar.bz2
 
 -------------------------------------------
 
-Files included in the binary package:
+Files included in the binary packages:
 
+(gedit)
   /etc/gconf/schemas/gedit-file-browser.schemas
   /etc/gconf/schemas/gedit.schemas
   /etc/postinstall/gedit.sh
   /etc/preremove/gedit.sh
   /usr/bin/gedit.exe
   /usr/bin/gnome-text-editor
-  /usr/include/gedit-2.20/gedit/gedit-app.h
-  /usr/include/gedit-2.20/gedit/gedit-convert.h
-  /usr/include/gedit-2.20/gedit/gedit-debug.h
-  /usr/include/gedit-2.20/gedit/gedit-document.h
-  /usr/include/gedit-2.20/gedit/gedit-encodings-option-menu.h
-  /usr/include/gedit-2.20/gedit/gedit-encodings.h
-  /usr/include/gedit-2.20/gedit/gedit-file-chooser-dialog.h
-  /usr/include/gedit-2.20/gedit/gedit-help.h
-  /usr/include/gedit-2.20/gedit/gedit-message-area.h
-  /usr/include/gedit-2.20/gedit/gedit-metadata-manager.h
-  /usr/include/gedit-2.20/gedit/gedit-notebook.h
-  /usr/include/gedit-2.20/gedit/gedit-panel.h
-  /usr/include/gedit-2.20/gedit/gedit-plugin.h
-  /usr/include/gedit-2.20/gedit/gedit-prefs-manager-app.h
-  /usr/include/gedit-2.20/gedit/gedit-prefs-manager.h
-  /usr/include/gedit-2.20/gedit/gedit-progress-message-area.h
-  /usr/include/gedit-2.20/gedit/gedit-statusbar.h
-  /usr/include/gedit-2.20/gedit/gedit-tab.h
-  /usr/include/gedit-2.20/gedit/gedit-utils.h
-  /usr/include/gedit-2.20/gedit/gedit-view.h
-  /usr/include/gedit-2.20/gedit/gedit-window.h
   /usr/lib/gedit-2/gedit-bugreport.sh
   /usr/lib/gedit-2/plugins/changecase.gedit-plugin
   /usr/lib/gedit-2/plugins/cygchangecase.dll
@@ -201,17 +182,15 @@ Files included in the binary package:
   /usr/lib/gedit-2/plugins/spell.gedit-plugin
   /usr/lib/gedit-2/plugins/taglist.gedit-plugin
   /usr/lib/gedit-2/plugins/time.gedit-plugin
-  /usr/lib/libgedit-2.20.a
-  /usr/lib/pkgconfig/gedit-2.20.pc
   /usr/share/applications/gedit.desktop
-  /usr/share/doc/gedit-2.24.2/AUTHORS
-  /usr/share/doc/gedit-2.24.2/BUGS
-  /usr/share/doc/gedit-2.24.2/COPYING
-  /usr/share/doc/gedit-2.24.2/ChangeLog
-  /usr/share/doc/gedit-2.24.2/INSTALL
-  /usr/share/doc/gedit-2.24.2/MAINTAINERS
-  /usr/share/doc/gedit-2.24.2/NEWS
-  /usr/share/doc/gedit-2.24.2/README
+  /usr/share/doc/gedit-2.24.3/AUTHORS
+  /usr/share/doc/gedit-2.24.3/BUGS
+  /usr/share/doc/gedit-2.24.3/COPYING
+  /usr/share/doc/gedit-2.24.3/ChangeLog
+  /usr/share/doc/gedit-2.24.3/INSTALL
+  /usr/share/doc/gedit-2.24.3/MAINTAINERS
+  /usr/share/doc/gedit-2.24.3/NEWS
+  /usr/share/doc/gedit-2.24.3/README
   /usr/share/gedit-2/icons/gedit-plugin.png
   /usr/share/gedit-2/logo/gedit-logo.png
   /usr/share/gedit-2/plugins/docinfo/docinfo.ui
@@ -413,39 +392,6 @@ Files included in the binary package:
   /usr/share/gnome/help/gedit/zh_TW/figures/gedit_window.png
   /usr/share/gnome/help/gedit/zh_TW/gedit.xml
   /usr/share/gnome/help/gedit/zh_TW/legal.xml
-  /usr/share/gtk-doc/html/gedit/GeditApp.html
-  /usr/share/gtk-doc/html/gedit/GeditDocument.html
-  /usr/share/gtk-doc/html/gedit/GeditEncodingsOptionMenu.html
-  /usr/share/gtk-doc/html/gedit/GeditFileChooserDialog.html
-  /usr/share/gtk-doc/html/gedit/GeditMessageArea.html
-  /usr/share/gtk-doc/html/gedit/GeditNotebook.html
-  /usr/share/gtk-doc/html/gedit/GeditPanel.html
-  /usr/share/gtk-doc/html/gedit/GeditPlugin.html
-  /usr/share/gtk-doc/html/gedit/GeditProgressMessageArea.html
-  /usr/share/gtk-doc/html/gedit/GeditStatusbar.html
-  /usr/share/gtk-doc/html/gedit/GeditTab.html
-  /usr/share/gtk-doc/html/gedit/GeditView.html
-  /usr/share/gtk-doc/html/gedit/GeditWindow.html
-  /usr/share/gtk-doc/html/gedit/ch01.html
-  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
-  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJobPreview.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-convert.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-debug.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-encodings.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-help.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-metadata-manager.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-prefs-manager-app.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-prefs-manager.html
-  /usr/share/gtk-doc/html/gedit/gedit-gedit-utils.html
-  /usr/share/gtk-doc/html/gedit/gedit.devhelp
-  /usr/share/gtk-doc/html/gedit/gedit.devhelp2
-  /usr/share/gtk-doc/html/gedit/home.png
-  /usr/share/gtk-doc/html/gedit/index.html
-  /usr/share/gtk-doc/html/gedit/index.sgml
-  /usr/share/gtk-doc/html/gedit/left.png
-  /usr/share/gtk-doc/html/gedit/right.png
-  /usr/share/gtk-doc/html/gedit/style.css
-  /usr/share/gtk-doc/html/gedit/up.png
   /usr/share/locale/af/LC_MESSAGES/gedit.mo
   /usr/share/locale/am/LC_MESSAGES/gedit.mo
   /usr/share/locale/ar/LC_MESSAGES/gedit.mo
@@ -556,9 +502,70 @@ Files included in the binary package:
   /usr/share/omf/gedit/gedit-zh_HK.omf
   /usr/share/omf/gedit/gedit-zh_TW.omf
 
+(gedit-devel)
+  /usr/include/gedit-2.20/gedit/gedit-app.h
+  /usr/include/gedit-2.20/gedit/gedit-convert.h
+  /usr/include/gedit-2.20/gedit/gedit-debug.h
+  /usr/include/gedit-2.20/gedit/gedit-document.h
+  /usr/include/gedit-2.20/gedit/gedit-encodings-option-menu.h
+  /usr/include/gedit-2.20/gedit/gedit-encodings.h
+  /usr/include/gedit-2.20/gedit/gedit-file-chooser-dialog.h
+  /usr/include/gedit-2.20/gedit/gedit-help.h
+  /usr/include/gedit-2.20/gedit/gedit-message-area.h
+  /usr/include/gedit-2.20/gedit/gedit-metadata-manager.h
+  /usr/include/gedit-2.20/gedit/gedit-notebook.h
+  /usr/include/gedit-2.20/gedit/gedit-panel.h
+  /usr/include/gedit-2.20/gedit/gedit-plugin.h
+  /usr/include/gedit-2.20/gedit/gedit-prefs-manager-app.h
+  /usr/include/gedit-2.20/gedit/gedit-prefs-manager.h
+  /usr/include/gedit-2.20/gedit/gedit-progress-message-area.h
+  /usr/include/gedit-2.20/gedit/gedit-statusbar.h
+  /usr/include/gedit-2.20/gedit/gedit-tab.h
+  /usr/include/gedit-2.20/gedit/gedit-utils.h
+  /usr/include/gedit-2.20/gedit/gedit-view.h
+  /usr/include/gedit-2.20/gedit/gedit-window.h
+  /usr/lib/libgedit-2.20.a
+  /usr/lib/pkgconfig/gedit-2.20.pc
+  /usr/share/gtk-doc/html/gedit/GeditApp.html
+  /usr/share/gtk-doc/html/gedit/GeditDocument.html
+  /usr/share/gtk-doc/html/gedit/GeditEncodingsOptionMenu.html
+  /usr/share/gtk-doc/html/gedit/GeditFileChooserDialog.html
+  /usr/share/gtk-doc/html/gedit/GeditMessageArea.html
+  /usr/share/gtk-doc/html/gedit/GeditNotebook.html
+  /usr/share/gtk-doc/html/gedit/GeditPanel.html
+  /usr/share/gtk-doc/html/gedit/GeditPlugin.html
+  /usr/share/gtk-doc/html/gedit/GeditProgressMessageArea.html
+  /usr/share/gtk-doc/html/gedit/GeditStatusbar.html
+  /usr/share/gtk-doc/html/gedit/GeditTab.html
+  /usr/share/gtk-doc/html/gedit/GeditView.html
+  /usr/share/gtk-doc/html/gedit/GeditWindow.html
+  /usr/share/gtk-doc/html/gedit/ch01.html
+  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
+  /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJobPreview.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-convert.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-debug.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-encodings.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-help.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-metadata-manager.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-prefs-manager-app.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-prefs-manager.html
+  /usr/share/gtk-doc/html/gedit/gedit-gedit-utils.html
+  /usr/share/gtk-doc/html/gedit/gedit.devhelp
+  /usr/share/gtk-doc/html/gedit/gedit.devhelp2
+  /usr/share/gtk-doc/html/gedit/home.png
+  /usr/share/gtk-doc/html/gedit/index.html
+  /usr/share/gtk-doc/html/gedit/index.sgml
+  /usr/share/gtk-doc/html/gedit/left.png
+  /usr/share/gtk-doc/html/gedit/right.png
+  /usr/share/gtk-doc/html/gedit/style.css
+  /usr/share/gtk-doc/html/gedit/up.png
+
 ------------------
 
 Port Notes:
+
+----- version 2.24.3-1 -----
+Version bump.  Separated devel package.
 
 ----- version 2.24.2-1 -----
 Version bump for GNOME 2.24.

@@ -1,0 +1,29 @@
+--- origsrc/gedit-2.24.3/configure.ac	2009-01-10 11:42:11.000000000 -0600
++++ src/gedit-2.24.3/configure.ac	2009-02-04 18:19:14.331875000 -0600
+@@ -57,6 +57,18 @@ esac
+ AC_MSG_RESULT([$platform_win32])
+ AM_CONDITIONAL(PLATFORM_WIN32, test "$platform_win32" = "yes")
+ 
++AC_MSG_CHECKING([for native Win32])
++case "$host" in
++  *-*-mingw*)
++    os_win32=yes
++    ;;
++  *)
++    os_win32=no
++    ;;
++esac
++AC_MSG_RESULT([$os_win32])
++AM_CONDITIONAL(OS_WIN32, test "$os_win32" = "yes")
++
+ dnl check for osx platform
+ AC_MSG_CHECKING([for Mac OS X platform])
+ case "$host" in
+--- origsrc/gedit-2.24.3/gedit/smclient/Makefile.am	2009-01-07 09:39:41.000000000 -0600
++++ src/gedit-2.24.3/gedit/smclient/Makefile.am	2009-02-04 18:19:25.847500000 -0600
+@@ -1,4 +1,4 @@
+-if PLATFORM_WIN32
++if OS_WIN32
+ platform_sources = eggsmclient-win32.c
+ platform_logout_test_ldflags = -mwindows
+ else
