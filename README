@@ -7,42 +7,43 @@ use of the GNOME help system, the GNOME Virtual File System and the
 GNOME print framework.
 
 Runtime requirements:
-  cygwin-1.5.25-15
-  libatk1.0_0-1.24.0-1
-  libcairo2-1.8.6-1
-  libenchant1-1.4.2-2
-  libgconf2_4-2.24.0-1
-  libgdk_pixbuf2.0_0-2.14.7-1
-  libglib2.0_0-2.18.4-1
-  libgtk2.0_0-2.14.7-1
-  libgtksourceview2.0_0-2.4.2-1
-  libICE6-1.0.4-2
-  libintl8-0.17-2
-  libpango1.0_0-1.22.4-1
-  libSM6-1.1.0-1
-  libX11_6-1.1.5-2
-  libxml2-2.7.3-1
-  python-2.5.4-1
-  python-gobject2-2.16.0-1
-  python-gtk2-2.14.0-1
-  python-gtksourceview2-2.4.0-1
+  cygwin-1.7.0-44
+  libatk1.0_0-1.26.0-1
+  libcairo2-1.8.6-10
+  libenchant1-1.4.2-10
+  libgcc1-4.3.2-2
+  libgconf2_4-2.26.0-1
+  libgdk_pixbuf2.0_0-2.16.0-1
+  libglib2.0_0-2.20.0-1
+  libgtk2.0_0-2.16.0-1
+  libgtksourceview2.0_0-2.6.0-1
+  libICE6-1.0.4-10
+  libintl8-0.17-10
+  libpango1.0_0-1.24.0-1
+  libSM6-1.1.0-10
+  libX11_6-1.2-10
+  libxml2-2.7.3-10
+  python-2.5.4-10
+  python-gobject2-2.16.1-10
+  python-gtk2-2.14.1-1
+  python-gtksourceview2-2.6.0-1
 
 Build requirements:
 (besides corresponding -devel packages)
-  autoconf2.5-2.63-1
-  automake1.10-1.10.1-2
+  autoconf2.5-2.63-10
+  automake1.10-1.10.1-10
   binutils-20080624-2
-  cygport-0.4.3-1
-  gawk-3.1.6-1
-  gcc-core-3.4.4-3
-  gettext-devel-0.17-2
-  gnome-common-2.24.0-1
-  gnome-doc-utils-0.14.2-1
-  intltool-0.40.5-1
-  libtool-2.2.6a-1
-  make-3.81-1
+  cygport-0.9.6-1
+  gawk-3.1.6-2
+  gcc4-core-4.3.2-2
+  gettext-devel-0.17-10
+  gnome-common-2.26.0-1
+  gnome-doc-utils-0.16.0-1
+  intltool-0.40.6-1
+  libtool-2.2.7a-11
+  make-3.81-2
   pkg-config-0.23a-2
-  rarian-0.8.1-1
+  rarian-0.8.1-10
   sed-4.1.5-2
 
 Canonical website:
@@ -54,16 +55,16 @@ Canonical download:
 -------------------------------------------
 
 Build instructions:
-  unpack gedit-2.24.3-1-src.tar.bz2
+  unpack gedit-2.26.0-1-src.tar.bz2
     if you use setup to install this src package, it will be
 	 unpacked under /usr/src automatically
   cd /usr/src
-  cygport ./gedit-2.24.3-1.cygport all
+  cygport ./gedit-2.26.0-1.cygport all
 
 This will create:
-  /usr/src/gedit-2.24.3-1-src.tar.bz2
-  /usr/src/gedit-2.24.3-1.tar.bz2
-  /usr/src/gedit-devel-2.24.3-1.tar.bz2
+  /usr/src/gedit-2.26.0-1-src.tar.bz2
+  /usr/src/gedit-2.26.0-1.tar.bz2
+  /usr/src/gedit-devel-2.26.0-1.tar.bz2
 
 -------------------------------------------
 
@@ -75,8 +76,11 @@ Files included in the binary packages:
   /etc/postinstall/gedit.sh
   /etc/preremove/gedit.sh
   /usr/bin/gedit.exe
-  /usr/bin/gnome-text-editor
   /usr/lib/gedit-2/gedit-bugreport.sh
+  /usr/lib/gedit-2/plugin-loaders/cygcloader.dll
+  /usr/lib/gedit-2/plugin-loaders/cygpythonloader.dll
+  /usr/lib/gedit-2/plugin-loaders/libcloader.la
+  /usr/lib/gedit-2/plugin-loaders/libpythonloader.la
   /usr/lib/gedit-2/plugins/changecase.gedit-plugin
   /usr/lib/gedit-2/plugins/cygchangecase.dll
   /usr/lib/gedit-2/plugins/cygdocinfo.dll
@@ -111,8 +115,6 @@ Files included in the binary packages:
   /usr/lib/gedit-2/plugins/externaltools/outputpanel.py
   /usr/lib/gedit-2/plugins/externaltools/outputpanel.pyc
   /usr/lib/gedit-2/plugins/externaltools/outputpanel.pyo
-  /usr/lib/gedit-2/plugins/externaltools/outputpanel.ui
-  /usr/lib/gedit-2/plugins/externaltools/tools.ui
   /usr/lib/gedit-2/plugins/filebrowser.gedit-plugin
   /usr/lib/gedit-2/plugins/indent.gedit-plugin
   /usr/lib/gedit-2/plugins/libchangecase.la
@@ -130,6 +132,9 @@ Files included in the binary packages:
   /usr/lib/gedit-2/plugins/pythonconsole/__init__.py
   /usr/lib/gedit-2/plugins/pythonconsole/__init__.pyc
   /usr/lib/gedit-2/plugins/pythonconsole/__init__.pyo
+  /usr/lib/gedit-2/plugins/pythonconsole/config.py
+  /usr/lib/gedit-2/plugins/pythonconsole/config.pyc
+  /usr/lib/gedit-2/plugins/pythonconsole/config.pyo
   /usr/lib/gedit-2/plugins/pythonconsole/console.py
   /usr/lib/gedit-2/plugins/pythonconsole/console.pyc
   /usr/lib/gedit-2/plugins/pythonconsole/console.pyo
@@ -177,26 +182,30 @@ Files included in the binary packages:
   /usr/lib/gedit-2/plugins/snippets/__init__.py
   /usr/lib/gedit-2/plugins/snippets/__init__.pyc
   /usr/lib/gedit-2/plugins/snippets/__init__.pyo
-  /usr/lib/gedit-2/plugins/snippets/snippets.ui
   /usr/lib/gedit-2/plugins/sort.gedit-plugin
   /usr/lib/gedit-2/plugins/spell.gedit-plugin
   /usr/lib/gedit-2/plugins/taglist.gedit-plugin
   /usr/lib/gedit-2/plugins/time.gedit-plugin
   /usr/share/applications/gedit.desktop
-  /usr/share/doc/gedit-2.24.3/AUTHORS
-  /usr/share/doc/gedit-2.24.3/BUGS
-  /usr/share/doc/gedit-2.24.3/COPYING
-  /usr/share/doc/gedit-2.24.3/ChangeLog
-  /usr/share/doc/gedit-2.24.3/INSTALL
-  /usr/share/doc/gedit-2.24.3/MAINTAINERS
-  /usr/share/doc/gedit-2.24.3/NEWS
-  /usr/share/doc/gedit-2.24.3/README
+  /usr/share/doc/gedit/AUTHORS
+  /usr/share/doc/gedit/BUGS
+  /usr/share/doc/gedit/COPYING
+  /usr/share/doc/gedit/ChangeLog
+  /usr/share/doc/gedit/HACKING
+  /usr/share/doc/gedit/MAINTAINERS
+  /usr/share/doc/gedit/NEWS
+  /usr/share/doc/gedit/README
   /usr/share/gedit-2/icons/gedit-plugin.png
   /usr/share/gedit-2/logo/gedit-logo.png
   /usr/share/gedit-2/plugins/docinfo/docinfo.ui
+  /usr/share/gedit-2/plugins/externaltools/ui/outputpanel.ui
+  /usr/share/gedit-2/plugins/externaltools/ui/tools.ui
   /usr/share/gedit-2/plugins/filebrowser/gedit-file-browser-widget-ui.xml
-  /usr/share/gedit-2/plugins/snippets/c++.xml
+  /usr/share/gedit-2/plugins/modelines/language-mappings
+  /usr/share/gedit-2/plugins/pythonconsole/ui/config.ui
   /usr/share/gedit-2/plugins/snippets/c.xml
+  /usr/share/gedit-2/plugins/snippets/chdr.xml
+  /usr/share/gedit-2/plugins/snippets/cpp.xml
   /usr/share/gedit-2/plugins/snippets/css.xml
   /usr/share/gedit-2/plugins/snippets/docbook.xml
   /usr/share/gedit-2/plugins/snippets/global.xml
@@ -214,19 +223,20 @@ Files included in the binary packages:
   /usr/share/gedit-2/plugins/snippets/sh.xml
   /usr/share/gedit-2/plugins/snippets/snippets.xml
   /usr/share/gedit-2/plugins/snippets/tcl.xml
+  /usr/share/gedit-2/plugins/snippets/ui/snippets.ui
   /usr/share/gedit-2/plugins/snippets/xml.xml
   /usr/share/gedit-2/plugins/sort/sort.ui
   /usr/share/gedit-2/plugins/spell/languages-dialog.ui
   /usr/share/gedit-2/plugins/spell/spell-checker.ui
+  /usr/share/gedit-2/plugins/taglist/HTML.tags.gz
+  /usr/share/gedit-2/plugins/taglist/Latex.tags.gz
+  /usr/share/gedit-2/plugins/taglist/XSLT.tags.gz
+  /usr/share/gedit-2/plugins/taglist/XUL.tags.gz
   /usr/share/gedit-2/plugins/time/time.ui
   /usr/share/gedit-2/plugins/tools/build
   /usr/share/gedit-2/plugins/tools/open-terminal-here
   /usr/share/gedit-2/plugins/tools/remove-trailing-spaces
   /usr/share/gedit-2/plugins/tools/run-command
-  /usr/share/gedit-2/taglist/HTML.tags.gz
-  /usr/share/gedit-2/taglist/Latex.tags.gz
-  /usr/share/gedit-2/taglist/XSLT.tags.gz
-  /usr/share/gedit-2/taglist/XUL.tags.gz
   /usr/share/gedit-2/ui/gedit-encodings-dialog.ui
   /usr/share/gedit-2/ui/gedit-open-location-dialog.ui
   /usr/share/gedit-2/ui/gedit-preferences-dialog.ui
@@ -273,10 +283,6 @@ Files included in the binary packages:
   /usr/share/gnome/help/gedit/es/figures/gedit_window.png
   /usr/share/gnome/help/gedit/es/gedit.xml
   /usr/share/gnome/help/gedit/es/legal.xml
-  /usr/share/gnome/help/gedit/eu/figures/gedit_recent_files_menu_icon.png
-  /usr/share/gnome/help/gedit/eu/figures/gedit_window.png
-  /usr/share/gnome/help/gedit/eu/gedit.xml
-  /usr/share/gnome/help/gedit/eu/legal.xml
   /usr/share/gnome/help/gedit/fi/figures/gedit_format_bold.png
   /usr/share/gnome/help/gedit/fi/figures/gedit_format_italic.png
   /usr/share/gnome/help/gedit/fi/figures/gedit_format_strikethrough.png
@@ -341,9 +347,6 @@ Files included in the binary packages:
   /usr/share/gnome/help/gedit/pt_BR/figures/gedit_window.png
   /usr/share/gnome/help/gedit/pt_BR/gedit.xml
   /usr/share/gnome/help/gedit/pt_BR/legal.xml
-  /usr/share/gnome/help/gedit/ro/figures/gedit_window.png
-  /usr/share/gnome/help/gedit/ro/gedit.xml
-  /usr/share/gnome/help/gedit/ro/legal.xml
   /usr/share/gnome/help/gedit/ru/figures/gedit_format_bold.png
   /usr/share/gnome/help/gedit/ru/figures/gedit_format_italic.png
   /usr/share/gnome/help/gedit/ru/figures/gedit_format_strikethrough.png
@@ -360,6 +363,14 @@ Files included in the binary packages:
   /usr/share/gnome/help/gedit/sv/figures/gedit_window.png
   /usr/share/gnome/help/gedit/sv/gedit.xml
   /usr/share/gnome/help/gedit/sv/legal.xml
+  /usr/share/gnome/help/gedit/th/figures/gedit_format_bold.png
+  /usr/share/gnome/help/gedit/th/figures/gedit_format_italic.png
+  /usr/share/gnome/help/gedit/th/figures/gedit_format_strikethrough.png
+  /usr/share/gnome/help/gedit/th/figures/gedit_format_underline.png
+  /usr/share/gnome/help/gedit/th/figures/gedit_recent_files_menu_icon.png
+  /usr/share/gnome/help/gedit/th/figures/gedit_window.png
+  /usr/share/gnome/help/gedit/th/gedit.xml
+  /usr/share/gnome/help/gedit/th/legal.xml
   /usr/share/gnome/help/gedit/uk/figures/gedit_format_bold.png
   /usr/share/gnome/help/gedit/uk/figures/gedit_format_italic.png
   /usr/share/gnome/help/gedit/uk/figures/gedit_format_strikethrough.png
@@ -396,6 +407,7 @@ Files included in the binary packages:
   /usr/share/locale/am/LC_MESSAGES/gedit.mo
   /usr/share/locale/ar/LC_MESSAGES/gedit.mo
   /usr/share/locale/as/LC_MESSAGES/gedit.mo
+  /usr/share/locale/ast/LC_MESSAGES/gedit.mo
   /usr/share/locale/az/LC_MESSAGES/gedit.mo
   /usr/share/locale/be/LC_MESSAGES/gedit.mo
   /usr/share/locale/be@latin/LC_MESSAGES/gedit.mo
@@ -485,7 +497,6 @@ Files included in the binary packages:
   /usr/share/omf/gedit/gedit-da.omf
   /usr/share/omf/gedit/gedit-de.omf
   /usr/share/omf/gedit/gedit-es.omf
-  /usr/share/omf/gedit/gedit-eu.omf
   /usr/share/omf/gedit/gedit-fi.omf
   /usr/share/omf/gedit/gedit-fr.omf
   /usr/share/omf/gedit/gedit-hu.omf
@@ -494,9 +505,9 @@ Files included in the binary packages:
   /usr/share/omf/gedit/gedit-ko.omf
   /usr/share/omf/gedit/gedit-oc.omf
   /usr/share/omf/gedit/gedit-pt_BR.omf
-  /usr/share/omf/gedit/gedit-ro.omf
   /usr/share/omf/gedit/gedit-ru.omf
   /usr/share/omf/gedit/gedit-sv.omf
+  /usr/share/omf/gedit/gedit-th.omf
   /usr/share/omf/gedit/gedit-uk.omf
   /usr/share/omf/gedit/gedit-zh_CN.omf
   /usr/share/omf/gedit/gedit-zh_HK.omf
@@ -512,13 +523,18 @@ Files included in the binary packages:
   /usr/include/gedit-2.20/gedit/gedit-file-chooser-dialog.h
   /usr/include/gedit-2.20/gedit/gedit-help.h
   /usr/include/gedit-2.20/gedit/gedit-message-area.h
+  /usr/include/gedit-2.20/gedit/gedit-message-bus.h
+  /usr/include/gedit-2.20/gedit/gedit-message-type.h
+  /usr/include/gedit-2.20/gedit/gedit-message.h
   /usr/include/gedit-2.20/gedit/gedit-metadata-manager.h
   /usr/include/gedit-2.20/gedit/gedit-notebook.h
   /usr/include/gedit-2.20/gedit/gedit-panel.h
+  /usr/include/gedit-2.20/gedit/gedit-plugin-loader.h
   /usr/include/gedit-2.20/gedit/gedit-plugin.h
   /usr/include/gedit-2.20/gedit/gedit-prefs-manager-app.h
   /usr/include/gedit-2.20/gedit/gedit-prefs-manager.h
   /usr/include/gedit-2.20/gedit/gedit-progress-message-area.h
+  /usr/include/gedit-2.20/gedit/gedit-status-combo-box.h
   /usr/include/gedit-2.20/gedit/gedit-statusbar.h
   /usr/include/gedit-2.20/gedit/gedit-tab.h
   /usr/include/gedit-2.20/gedit/gedit-utils.h
@@ -530,7 +546,9 @@ Files included in the binary packages:
   /usr/share/gtk-doc/html/gedit/GeditDocument.html
   /usr/share/gtk-doc/html/gedit/GeditEncodingsOptionMenu.html
   /usr/share/gtk-doc/html/gedit/GeditFileChooserDialog.html
+  /usr/share/gtk-doc/html/gedit/GeditMessage.html
   /usr/share/gtk-doc/html/gedit/GeditMessageArea.html
+  /usr/share/gtk-doc/html/gedit/GeditMessageBus.html
   /usr/share/gtk-doc/html/gedit/GeditNotebook.html
   /usr/share/gtk-doc/html/gedit/GeditPanel.html
   /usr/share/gtk-doc/html/gedit/GeditPlugin.html
@@ -540,6 +558,7 @@ Files included in the binary packages:
   /usr/share/gtk-doc/html/gedit/GeditView.html
   /usr/share/gtk-doc/html/gedit/GeditWindow.html
   /usr/share/gtk-doc/html/gedit/ch01.html
+  /usr/share/gtk-doc/html/gedit/gedit-GeditMessageType.html
   /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJob.html
   /usr/share/gtk-doc/html/gedit/gedit-GeditPrintJobPreview.html
   /usr/share/gtk-doc/html/gedit/gedit-gedit-convert.html
@@ -564,49 +583,8 @@ Files included in the binary packages:
 
 Port Notes:
 
------ version 2.24.3-1 -----
-Version bump.  Separated devel package.
-
------ version 2.24.2-1 -----
-Version bump for GNOME 2.24.
-
------ version 2.22.3-1 -----
-Version bump for GNOME 2.22.
-
------ version 2.20.4-1 -----
-Version bump for GNOME 2.20.
-Plugins built against previous versions will need to be rebuilt.
-
------ version 2.18.2-1 -----
-Version bump for GNOME 2.18.
-
------ version 2.16.2-1 -----
-Version bump for GNOME 2.16.
-Plugins built against previous versions will need to be rebuilt.
-
------ version 2.14.3-1 -----
-Version bump for GNOME 2.14.
-Plugins built against previous versions will need to be rebuilt.
-
------ version 2.12.1-1 -----
-Version bump for GNOME 2.12.
-
------ version 2.10.5-1 -----
-Version bump for GNOME 2.10.
-
-This release includes libgedit-2.dll.a, an import library for linking
-against gedit.exe directly; plugins built for gedit-2.8.2-1 will need to
-be rebuilt.
-
------ version 2.8.2-1 -----
-Initial release for Cygwin.
-
-The main program is built as a shared library and a bogus stub to allow
-the linking of the plugins which depend on symbols from the gedit app.
-While it's unconventional, it appears to be working.
-
-The list of plugins appear twice in the Preferences menu; using the
-second listing of each plugin should work properly.
+----- version 2.26.0-1 -----
+Initial release of GNOME 2.26 for Cygwin 1.7.
 
 
 Cygwin port maintained by:
