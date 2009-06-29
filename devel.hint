@@ -1,5 +1,5 @@
 category: Gnome Editors
-requires: cygwin gedit libatk1.0-devel libglib2.0-devel libgtk2.0-devel libgtksourceview2.0-devel
+requires: gedit libatk1.0-devel libglib2.0-devel libgtk2.0-devel libgtksourceview2.0-devel
 external-source: gedit
 sdesc: "Text editor for the GNOME Desktop (plugin development)"
 ldesc: "gedit is a small and lightweight UTF-8 text editor for the GNOME
