@@ -1,22 +1,24 @@
---- origsrc/gedit-2.26.0/configure.ac	2009-03-15 09:20:08.000000000 -0500
-+++ src/gedit-2.26.0/configure.ac	2009-04-02 04:40:58.722250000 -0500
-@@ -55,7 +55,6 @@ AC_MSG_CHECKING([for Win32 platform])
+--- origsrc/gedit-2.28.0/configure.ac	2009-09-21 09:58:06.000000000 -0500
++++ src/gedit-2.28.0/configure.ac	2009-10-29 22:38:26.569199900 -0500
+@@ -60,8 +60,6 @@ AC_MSG_CHECKING([for Win32 platform])
  case "$host" in
    *-*-mingw*|*-*-cygwin*)
      platform_win32=yes
 -    AC_CHECK_TOOL(WINDRES, windres)
+-    ACTIVE_PLUGINS="${ACTIVE_PLUGINS},checkupdate"
      ;;
    *)
      platform_win32=no
-@@ -68,6 +67,7 @@ AC_MSG_CHECKING([for native Win32])
+@@ -74,6 +72,8 @@ AC_MSG_CHECKING([for native Win32])
  case "$host" in
    *-*-mingw*)
      os_win32=yes
 +    AC_CHECK_TOOL(WINDRES, windres)
++    ACTIVE_PLUGINS="${ACTIVE_PLUGINS},checkupdate"
      ;;
    *)
      os_win32=no
-@@ -393,8 +393,12 @@ fi
+@@ -418,8 +418,12 @@ fi
  # so we create a lib
  if test "$platform_win32" = yes; then
  	GEDIT_IMPLIB="-lgedit-$GEDIT_API_VERSION"
@@ -31,8 +33,8 @@
  else
  	GEDIT_IMPLIB=""
  	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version"
---- origsrc/gedit-2.26.0/gedit/Makefile.am	2009-03-02 10:16:24.000000000 -0600
-+++ src/gedit-2.26.0/gedit/Makefile.am	2009-04-02 04:37:52.597250000 -0500
+--- origsrc/gedit-2.28.0/gedit/Makefile.am	2009-09-20 12:43:50.000000000 -0500
++++ src/gedit-2.28.0/gedit/Makefile.am	2009-10-29 22:38:26.579199900 -0500
 @@ -21,7 +21,10 @@ gedit_SOURCES = \
  gedit_LDADD = libgedit.la $(GEDIT_LIBS) $(EGG_SMCLIENT_LIBS)
   
@@ -54,16 +56,16 @@
  gedit-res.o: gedit.rc
  	$(WINDRES) -i gedit.rc --input-format=rc -o gedit-res.o -O coff
  
-@@ -113,7 +116,7 @@ headerdir = $(prefix)/include/gedit-@GED
+@@ -111,7 +114,7 @@ headerdir = $(prefix)/include/gedit-@GED
  header_DATA = 				\
  	$(INST_H_FILES)	
  
 -if !PLATFORM_WIN32
 +if !OS_WIN32
  POSIXIO_FILES = 			\
- 	gedit-mmap-document-loader.c	\
  	gedit-local-document-saver.c	
-@@ -220,7 +223,7 @@ else
+ else
+@@ -217,7 +220,7 @@ else
  	ln -s gedit $(DESTDIR)$(bindir)/gnome-text-editor
  endif
  
