@@ -18,6 +18,15 @@
      ;;
    *)
      os_win32=no
+@@ -180,7 +180,7 @@ if test "x$enable_updater" != "xno"; the
+ 		have_libsoup=no)
+ 	
+ 	if test "x$have_libsoup" = "xyes"; then
+-		if test "x$platform_win32" = "xyes"; then
++		if test "x$os_win32" = "xyes"; then
+ 			enable_updater=yes
+ 		elif test "x$os_osx" = "xyes"; then
+ 			enable_updater=yes
 @@ -418,8 +418,12 @@ fi
  # so we create a lib
  if test "$platform_win32" = yes; then
