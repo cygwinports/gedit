@@ -11,4 +11,4 @@ gedit_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk
 
 DIFF_EXCLUDES="*.desktop.in"
 
-CYGCONF_ARGS="--libexecdir=/usr/lib --enable-python --disable-attr"
+CYGCONF_ARGS="--libexecdir=/usr/lib --enable-python"
