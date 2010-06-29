@@ -2,7 +2,7 @@ inherit gnome2
 
 DESCRIPTION="GNOME text editor"
 
-PATCH_URI="2.28.0-cygwin-x11.patch"
+PATCH_URI="2.30.3-cygwin.patch"
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
