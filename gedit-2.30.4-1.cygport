@@ -9,6 +9,6 @@ PKG_HINTS="setup devel"
 gedit_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/gedit-2/ usr/share/"
 gedit_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 
-DIFF_EXCLUDES="*.desktop.in"
+DIFF_EXCLUDES="*.desktop.in *.schemas.in"
 
 CYGCONF_ARGS="--libexecdir=/usr/lib --enable-python"
