@@ -1,18 +1,16 @@
 --- origsrc/gedit-3.0.0/configure.ac	2011-04-04 11:12:51.000000000 -0500
 +++ src/gedit-3.0.0/configure.ac	2011-04-11 11:59:47.097507000 -0500
-@@ -412,9 +412,9 @@ fi
+@@ -412,8 +412,8 @@ fi
  # on win32 plugins must be able to resolve all symbols at link time
  # so we create a lib
  if test "$platform_win32" = yes; then
 -	GEDIT_IMPLIB="-lgedit-$GEDIT_API_VERSION"
--	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit-\$(GEDIT_API_VERSION).a"
--	LOADER_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit-\$(GEDIT_API_VERSION).a"
+-	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit.a"
 +	GEDIT_IMPLIB="-lgedit"
 +	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit.a"
-+	LOADER_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit.a"
  	if test "$os_win32" = yes; then
  		PLUGIN_LIBTOOL_FLAGS="${PLUGIN_LIBTOOL_FLAGS} -mwindows"
- 		LOADER_LIBTOOL_FLAGS="${LOADER_LIBTOOL_FLAGS} -mwindows"
+ 	fi
 --- origsrc/gedit-3.0.0/gedit/Makefile.am	2011-03-27 08:14:54.000000000 -0500
 +++ src/gedit-3.0.0/gedit/Makefile.am	2011-04-11 12:02:29.353389900 -0500
 @@ -235,7 +235,7 @@ if !ENABLE_GVFS_METADATA
