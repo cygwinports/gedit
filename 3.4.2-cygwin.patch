@@ -1,0 +1,78 @@
+--- origsrc/gedit-3.4.2/configure.ac	2012-05-24 07:46:18.000000000 -0500
++++ src/gedit-3.4.2/configure.ac	2012-06-28 15:12:45.109089600 -0500
+@@ -411,8 +411,8 @@ fi
+ # on win32 plugins must be able to resolve all symbols at link time
+ # so we create a lib
+ if test "$platform_win32" = yes; then
+-	GEDIT_IMPLIB="-lgedit-$GEDIT_API_VERSION"
+-	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined -Wl,\$(top_builddir)/gedit/libgedit.a"
++	GEDIT_IMPLIB="-lgedit-private"
++	PLUGIN_LIBTOOL_FLAGS="-module -avoid-version -no-undefined \$(top_builddir)/gedit/libgedit-private.la"
+ 	if test "$os_win32" = yes; then
+ 		PLUGIN_LIBTOOL_FLAGS="${PLUGIN_LIBTOOL_FLAGS} -mwindows"
+ 	fi
+--- origsrc/gedit-3.4.2/data/gedit.pc.in	2011-07-04 06:12:41.000000000 -0500
++++ src/gedit-3.4.2/data/gedit.pc.in	2012-06-28 15:13:40.139165500 -0500
+@@ -8,4 +8,4 @@ Description: gedit
+ Requires: gtksourceview-3.0 libpeas-1.0 libpeas-gtk-1.0
+ Version: @VERSION@
+ Cflags: -I${includedir}/gedit-@GEDIT_API_VERSION@
+-Libs: -L${libdir} @GEDIT_IMPLIB@
++Libs: -L${libdir}/gedit @GEDIT_IMPLIB@
+--- origsrc/gedit-3.4.2/gedit/Makefile.am	2012-05-11 06:34:49.000000000 -0500
++++ src/gedit-3.4.2/gedit/Makefile.am	2012-06-28 15:41:39.228380000 -0500
+@@ -23,7 +23,6 @@ gedit_SOURCES = \
+ 	gedit.c
+ 
+ gedit_LDADD =			\
+-	libgedit.la		\
+ 	libgedit-private.la	\
+ 	$(GEDIT_LIBS)		\
+ 	$(GTK_MAC_LIBS)		\
+@@ -47,7 +46,7 @@ libgedit_la_LIBADD += $(GEDIT_LIBS) $(GT
+ 
+ libgedit_private_la_LIBADD = libgedit.la $(GEDIT_LIBS)
+ 
+-libgedit_private_la_LDFLAGS = -avoid-version
++libgedit_private_la_LDFLAGS = -avoid-version -export-dynamic -no-undefined -export-symbols-regex "^[[^_]].*"
+ 
+ # Mac OSX convenience library and ldflags
+ if OS_OSX
+@@ -240,7 +239,7 @@ if !ENABLE_GVFS_METADATA
+ libgedit_la_SOURCES += gedit-metadata-manager.c
+ endif
+ 
+-if !PLATFORM_WIN32
++if !OS_WIN32
+ libgedit_la_SOURCES += gedit-fifo.c
+ NOINST_H_FILES += gedit-fifo.h
+ endif
+@@ -289,11 +288,11 @@ if HAVE_INTROSPECTION
+ -include $(INTROSPECTION_MAKEFILE)
+ INTROSPECTION_GIRS = Gedit-3.0.gir
+ 
+-Gedit-3.0.gir: gedit
++Gedit-3.0.gir: gedit$(EXEEXT)
+ INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all
+ Gedit_3_0_gir_NAMESPACE = Gedit
+ Gedit_3_0_gir_VERSION = 3.0
+-Gedit_3_0_gir_PROGRAM = $(builddir)/gedit
++Gedit_3_0_gir_PROGRAM = $(builddir)/gedit$(EXEEXT)
+ Gedit_3_0_gir_FILES = $(INST_H_FILES) $(libgedit_c_files) $(BUILT_SOURCES)
+ Gedit_3_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
+ 
+@@ -312,12 +311,9 @@ dist-hook:
+ 	cd $(distdir); rm -f $(BUILT_SOURCES) $(BUILT_SOURCES_PRIVATE)
+ 
+ install-exec-hook:
+-if PLATFORM_WIN32
+-	$(mkinstalldirs) "$(DESTDIR)$(libdir)"
+-	$(INSTALL_DATA) libgedit.a "$(DESTDIR)$(libdir)"
+-else
++if !OS_WIN32
+ 	rm -f $(DESTDIR)$(bindir)/gnome-text-editor
+-	ln -s gedit $(DESTDIR)$(bindir)/gnome-text-editor
++	ln -s gedit$(EXEEXT) $(DESTDIR)$(bindir)/gnome-text-editor
+ endif
+ 
+ -include $(top_srcdir)/git.mk

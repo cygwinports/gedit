@@ -2,7 +2,7 @@ inherit python gnome2
 
 DESCRIPTION="GNOME text editor"
 
-PATCH_URI="3.0.0-cygwin.patch"
+PATCH_URI="3.4.2-cygwin.patch"
 
 DEPEND="gnome-common gtk-doc
 	girepository(Gtk-3.0)
@@ -12,8 +12,8 @@ DEPEND="gnome-common gtk-doc
 
 PKG_NAMES="${PN} ${PN}-devel"
 PKG_HINTS="setup devel"
-gedit_CONTENTS="--exclude=gtk-doc etc/ usr/bin/ usr/lib/gedit/ ${PYTHON_SITELIB#/} usr/share/"
-gedit_devel_CONTENTS="usr/include/ usr/lib/lib* usr/lib/pkgconfig/ usr/share/gtk-doc/"
+gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* etc/ usr/bin/ usr/lib/gedit/ ${PYTHON_SITELIB#/} usr/share/"
+gedit_devel_CONTENTS="usr/include/ usr/lib/gedit/libgedit* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 
 DIFF_EXCLUDES="*.desktop.in *.schemas.in *-marshal.h"
 
