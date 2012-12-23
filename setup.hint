@@ -1,8 +1,0 @@
-category: Gnome Editors
-requires: libatk1.0_0 libcairo2 libenchant1 libgdk_pixbuf2.0_0 libgirepository1.0_1 libglib2.0_0 libgtk3_0 libgtksourceview3.0_0 libICE6 libintl8 libpango1.0_0 libpeas1.0_0 libSM6 libX11_6 libxml2 libzeitgeist1.0_1 girepository-Gtk3.0
-sdesc: "Text editor for the GNOME Desktop"
-ldesc: "gedit is a small and lightweight UTF-8 text editor for the GNOME
-environment. Complete GNOME integration is featured, with support for
-Drag and Drop (DnD) between Nautilus (the GNOME file manager) and the
-use of the GNOME help system, the GNOME Virtual File System and the
-GNOME print framework."
