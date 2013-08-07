@@ -1,8 +1,8 @@
-inherit python gnome2
+inherit python3 gnome2
 
 NAME="gedit"
-VERSION=3.6.2
-RELEASE=2
+VERSION=3.8.3
+RELEASE=1
 CATEGORY="GNOME Editors"
 SUMMARY="Text editor for the GNOME Desktop"
 DESCRIPTION="gedit is a small and lightweight UTF-8 text editor for the GNOME
@@ -19,11 +19,12 @@ DEPEND="gnome-common gtk-doc
 	pkgconfig(gtksourceview-3.0)
 	pkgconfig(libpeas-gtk-1.0)"
 
-PKG_NAMES="${PN} ${PN}-devel"
+PKG_NAMES="gedit gedit-devel"
 gedit_REQUIRES="girepository-Gtk3.0"
-gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* etc/ usr/bin/ usr/lib/gedit/ ${PYTHON_SITELIB#/} usr/share/"
+gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* etc/ usr/bin/ usr/lib/gedit/ usr/libexec/ ${PYTHON3_SITELIB#/} usr/share/"
 gedit_devel_CONTENTS="usr/include/ usr/lib/gedit/libgedit* usr/lib/pkgconfig/ usr/share/gtk-doc/"
 
 DIFF_EXCLUDES="*.desktop.in *.schemas.in *-marshal.h"
 
-CYGCONF_ARGS="--libexecdir=/usr/lib --enable-python"
+ACLOCAL_FLAGS="-I libgd"
+CYGCONF_ARGS="--enable-python"

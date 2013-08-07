@@ -38,15 +38,6 @@
  
  # Mac OSX convenience library and ldflags
  if OS_OSX
-@@ -240,7 +239,7 @@ if !ENABLE_GVFS_METADATA
- libgedit_la_SOURCES += gedit-metadata-manager.c
- endif
- 
--if !PLATFORM_WIN32
-+if !OS_WIN32
- libgedit_la_SOURCES += gedit-fifo.c
- NOINST_H_FILES += gedit-fifo.h
- endif
 @@ -289,11 +288,11 @@ if HAVE_INTROSPECTION
  -include $(INTROSPECTION_MAKEFILE)
  INTROSPECTION_GIRS = Gedit-3.0.gir
