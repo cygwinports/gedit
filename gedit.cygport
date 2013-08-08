@@ -26,5 +26,7 @@ gedit_devel_CONTENTS="usr/include/ usr/lib/gedit/libgedit* usr/lib/pkgconfig/ us
 
 DIFF_EXCLUDES="*.desktop.in *.schemas.in *-marshal.h"
 
+# for python3-compatible py-compile
+WANT_AUTOMAKE=1.13
 ACLOCAL_FLAGS="-I libgd"
 CYGCONF_ARGS="--enable-python"
