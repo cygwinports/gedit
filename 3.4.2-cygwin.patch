@@ -1,5 +1,14 @@
 --- origsrc/gedit-3.4.2/configure.ac	2012-05-24 07:46:18.000000000 -0500
 +++ src/gedit-3.4.2/configure.ac	2012-06-28 15:12:45.109089600 -0500
+@@ -342,7 +342,7 @@ else
+ 	X11_LIBS=
+ fi
+ 
+-if test "$platform_win32" = "no"; then
++if test "$os_win32" = "no"; then
+ 	PKG_CHECK_MODULES(UNIX, [
+ 		gio-unix-2.0 >= 2.25.5
+ 	])
 @@ -411,8 +411,8 @@ fi
  # on win32 plugins must be able to resolve all symbols at link time
  # so we create a lib
@@ -67,3 +76,14 @@
  endif
  
  -include $(top_srcdir)/git.mk
+--- origsrc/gedit-3.10.4/plugins/externaltools/data/Makefile.am	2014-01-21 16:34:41.000000000 -0600
++++ src/gedit-3.10.4/plugins/externaltools/data/Makefile.am	2014-03-19 20:34:34.393523700 -0500
+@@ -18,7 +18,7 @@ install_tools_in_files = $(tools_in_file
+ if PLATFORM_OSX
+ install_tools_in_files += $(tools_in_osx)
+ else
+-if PLATFORM_WIN32
++if OS_WIN32
+ install_tools_in_files += $(tools_in_win32) 
+ else
+ install_tools_in_files += $(tools_in_linux)

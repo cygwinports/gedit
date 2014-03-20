@@ -1,0 +1,12 @@
+--- origsrc/gedit-3.10.4/configure.ac	2014-03-19 20:44:08.984487500 -0500
++++ src/gedit-3.10.4/configure.ac	2014-03-19 20:55:39.657691800 -0500
+@@ -165,8 +165,7 @@ dnl ====================================
+ 
+ IT_PROG_INTLTOOL([0.50.1])
+ 
+-AM_GNU_GETTEXT_VERSION([0.18])
+-AM_GNU_GETTEXT([external])
++AM_GLIB_GNU_GETTEXT
+ 
+ AC_SUBST([GETTEXT_PACKAGE], [gedit])
+ AC_DEFINE_UNQUOTED([GETTEXT_PACKAGE], "$GETTEXT_PACKAGE", [Define to the gettext package name.])
