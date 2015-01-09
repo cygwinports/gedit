@@ -1,7 +1,7 @@
 inherit python3 gnome2
 
 NAME="gedit"
-VERSION=3.10.4
+VERSION=3.14.2
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Text editor for the GNOME Desktop"
@@ -12,8 +12,9 @@ use of the GNOME help system, the GNOME Virtual File System and the
 GNOME print framework."
 
 PATCH_URI="
-	3.4.2-cygwin.patch
 	3.10.4-glib-gettext.patch
+	3.14.2-cygwin.patch
+	3.14.2-introspection.patch
 "
 
 DEPEND="gnome-common gtk-doc

@@ -1,0 +1,78 @@
+--- origsrc/gedit-3.14.2/configure.ac	2015-01-08 21:30:41.515860300 -0600
++++ src/gedit-3.14.2/configure.ac	2015-01-08 20:18:26.413872200 -0600
+@@ -70,18 +70,7 @@ AC_SUBST(ACTIVE_PLUGINS)
+ dnl check for win32 platform
+ AC_MSG_CHECKING([for Win32 platform])
+ case "$host" in
+-  *-*-mingw*|*-*-cygwin*)
+-        archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags -o $output_objdir/$soname ${wl}--enable-auto-image-base -Xlinker --output-def -Xlinker $lib.def && $DLLTOOL --dllname $soname --def $lib.def --output-delaylib $lib'
+-	# If the export-symbols file already is a .def file (1st line
+-	# is EXPORTS), use it as is; otherwise, prepend...
+-	archive_expsym_cmds='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
+-	  cp $export_symbols $output_objdir/$soname.def;
+-	else
+-	  echo EXPORTS > $output_objdir/$soname.def;
+-	  cat $export_symbols >> $output_objdir/$soname.def;
+-	fi~
+-	$CC -shared $output_objdir/$soname.def $libobjs $deplibs $compiler_flags -o $output_objdir/$soname ${wl}--enable-auto-image-base;
+-	$DLLTOOL --dllname $soname --def $output_objdir/$soname.def --output-delaylib $lib'
++  *-*-cygwin*|*-*-mingw*)
+     platform_win32=yes
+     ;;
+   *)
+@@ -94,6 +83,17 @@ AM_CONDITIONAL(PLATFORM_WIN32, test "$pl
+ AC_MSG_CHECKING([for native Win32])
+ case "$host" in
+   *-*-mingw*)
++        archive_cmds='$CC -shared $libobjs $deplibs $compiler_flags -o $output_objdir/$soname ${wl}--enable-auto-image-base -Xlinker --output-def -Xlinker $lib.def && $DLLTOOL --dllname $soname --def $lib.def --output-delaylib $lib'
++	# If the export-symbols file already is a .def file (1st line
++	# is EXPORTS), use it as is; otherwise, prepend...
++	archive_expsym_cmds='if test "x`$SED 1q $export_symbols`" = xEXPORTS; then
++	  cp $export_symbols $output_objdir/$soname.def;
++	else
++	  echo EXPORTS > $output_objdir/$soname.def;
++	  cat $export_symbols >> $output_objdir/$soname.def;
++	fi~
++	$CC -shared $output_objdir/$soname.def $libobjs $deplibs $compiler_flags -o $output_objdir/$soname ${wl}--enable-auto-image-base;
++	$DLLTOOL --dllname $soname --def $output_objdir/$soname.def --output-delaylib $lib'
+     os_win32=yes
+     AC_CHECK_TOOL(WINDRES, windres)
+     ACTIVE_PLUGINS="${ACTIVE_PLUGINS}, 'checkupdate'"
+@@ -339,7 +339,7 @@ else
+ 	X11_LIBS=
+ fi
+ 
+-if test "$platform_win32" = "no"; then
++if test "$os_win32" = "no"; then
+ 	PKG_CHECK_MODULES(UNIX, [
+ 		gio-unix-2.0 >= 2.25.5
+ 	])
+--- origsrc/gedit-3.14.2/gedit/Makefile.am	2014-11-27 14:42:17.000000000 -0600
++++ src/gedit-3.14.2/gedit/Makefile.am	2015-01-08 21:29:48.640145900 -0600
+@@ -322,13 +322,13 @@ CLEANFILES += $(VAPIGEN_VAPIS) gedit/ged
+ endif # ENABLE_VAPIGEN
+ 
+ install-exec-hook:
+-if PLATFORM_WIN32
++if OS_WIN32
+ 	$(mkinstalldirs) "$(DESTDIR)$(libdir)/gedit"
+ 	mv -t $(DESTDIR)$(libdir)/gedit $(DESTDIR)$(libdir)/bin/*
+ 	rm -rf $(DESTDIR)$(libdir)/bin
+ else
+ 	rm -f $(DESTDIR)$(bindir)/gnome-text-editor
+-	ln -s gedit $(DESTDIR)$(bindir)/gnome-text-editor
++	ln -s gedit$(EXEEXT) $(DESTDIR)$(bindir)/gnome-text-editor
+ endif
+ 
+ BUILT_SOURCES += $(gedit_built_sources) gedit/gedit-resources.c
+--- origsrc/gedit-3.14.2/plugins/externaltools/data/Makefile.am	2014-11-27 14:42:17.000000000 -0600
++++ src/gedit-3.14.2/plugins/externaltools/data/Makefile.am	2015-01-08 20:18:26.489381800 -0600
+@@ -19,7 +19,7 @@ externaltools_install_tools_in_files = $
+ if PLATFORM_OSX
+ externaltools_install_tools_in_files += $(externaltools_tools_in_osx)
+ else
+-if PLATFORM_WIN32
++if OS_WIN32
+ externaltools_install_tools_in_files += $(externaltools_tools_in_win32)
+ else
+ externaltools_install_tools_in_files += $(externaltools_tools_in_linux)

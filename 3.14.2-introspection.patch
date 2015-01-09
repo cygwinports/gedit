@@ -1,0 +1,17 @@
+--- origsrc/gedit-3.14.2/gedit/Makefile.am	2014-11-27 14:42:17.000000000 -0600
++++ src/gedit-3.14.2/gedit/Makefile.am	2015-01-08 21:29:48.640145900 -0600
+@@ -275,12 +275,12 @@ if HAVE_INTROSPECTION
+ INTROSPECTION_GIRS = gedit/Gedit-3.0.gir
+ INTROSPECTION_SCANNER_ENV = CC="$(CC)"
+ 
+-gedit/Gedit-3.0.gir: gedit/gedit$(EXEEXT)
++gedit/Gedit-3.0.gir: gedit/libgedit.la
+ INTROSPECTION_SCANNER_ARGS = -I$(top_srcdir) --warn-all
+ 
+ gedit_Gedit_3_0_gir_NAMESPACE = Gedit
+ gedit_Gedit_3_0_gir_VERSION = 3.0
+-gedit_Gedit_3_0_gir_PROGRAM = $(builddir)/gedit/gedit$(EXEEXT)
++gedit_Gedit_3_0_gir_LIBS = gedit/libgedit.la
+ gedit_Gedit_3_0_gir_INCLUDES = Gtk-3.0 GtkSource-3.0
+ gedit_Gedit_3_0_gir_EXPORT_PACKAGES = gedit
+ gedit_Gedit_3_0_gir_SCANNERFLAGS = $(GEDIT_CFLAGS) $(foreach header,$(gedit_INST_H_FILES),--c-include="$(header)")
