@@ -2,7 +2,7 @@ inherit python3 gnome2
 
 NAME="gedit"
 VERSION=3.14.3
-RELEASE=1
+RELEASE=2
 CATEGORY="Editors"
 SUMMARY="Text editor for the GNOME Desktop"
 DESCRIPTION="gedit is a small and lightweight UTF-8 text editor for the GNOME
