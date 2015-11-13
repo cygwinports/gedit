@@ -38,15 +38,6 @@
      os_win32=yes
      AC_CHECK_TOOL(WINDRES, windres)
      ACTIVE_PLUGINS="${ACTIVE_PLUGINS}, 'checkupdate'"
-@@ -339,7 +339,7 @@ else
- 	X11_LIBS=
- fi
- 
--if test "$platform_win32" = "no"; then
-+if test "$os_win32" = "no"; then
- 	PKG_CHECK_MODULES(UNIX, [
- 		gio-unix-2.0 >= 2.25.5
- 	])
 --- origsrc/gedit-3.14.2/gedit/Makefile.am	2014-11-27 14:42:17.000000000 -0600
 +++ src/gedit-3.14.2/gedit/Makefile.am	2015-01-08 21:29:48.640145900 -0600
 @@ -322,13 +322,13 @@ CLEANFILES += $(VAPIGEN_VAPIS) gedit/ged
