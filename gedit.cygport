@@ -23,14 +23,16 @@ DEPEND="gnome-common gtk-doc
 	pkgconfig(gtksourceview-3.0)
 	pkgconfig(libpeas-gtk-1.0)"
 
-PKG_NAMES="gedit gedit-devel gedit-doc"
+PKG_NAMES="gedit gedit-devel gedit-doc vala-gedit"
 # gvfs: metadata storage, filebrowser plugin
 # gnome-terminal, zenity: externaltools plugin
 gedit_REQUIRES="girepository-Peas1.0 gnome-terminal gvfs zenity"
-gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* etc/ usr/bin/ usr/lib/gedit/ usr/libexec/ ${PYTHON3_SITELIB#/} usr/share/"
+gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* --exclude=usr/share/vala etc/ usr/bin/ usr/lib/gedit/ usr/libexec/ ${PYTHON3_SITELIB#/} usr/share/"
+gedit_devel_REQUIRES="vala-gedit"
 gedit_devel_CONTENTS="usr/include/ usr/lib/gedit/libgedit* usr/lib/pkgconfig/"
 gedit_doc_CATEGORY="Doc"
 gedit_doc_CONTENTS="usr/share/gtk-doc/"
+vala_gedit_CONTENTS="usr/share/vala/vapi/gedit.*"
 
 DIFF_EXCLUDES="*.desktop.in *.schemas.in *-marshal.h"
 
