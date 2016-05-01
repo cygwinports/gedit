@@ -1,7 +1,7 @@
 inherit python3 gnome2
 
 NAME="gedit"
-VERSION=3.18.2
+VERSION=3.18.3
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Text editor for the GNOME Desktop"
@@ -27,7 +27,14 @@ PKG_NAMES="gedit gedit-devel gedit-doc vala-gedit"
 # gvfs: metadata storage, filebrowser plugin
 # gnome-terminal, zenity: externaltools plugin
 gedit_REQUIRES="girepository-Peas1.0 gnome-terminal gvfs zenity"
-gedit_CONTENTS="--exclude=gtk-doc --exclude=libgedit* --exclude=usr/share/vala etc/ usr/bin/ usr/lib/gedit/ usr/libexec/ ${PYTHON3_SITELIB#/} usr/share/"
+gedit_CONTENTS="
+	--exclude=gtk-doc --exclude=libgedit* --exclude=usr/share/vala
+	usr/bin/
+	usr/lib/gedit/
+	usr/libexec/
+	${PYTHON3_SITELIB#/}
+	usr/share/
+"
 gedit_devel_REQUIRES="vala-gedit"
 gedit_devel_CONTENTS="usr/include/ usr/lib/gedit/libgedit* usr/lib/pkgconfig/"
 gedit_doc_CATEGORY="Doc"
