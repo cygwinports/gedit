@@ -1,7 +1,7 @@
 inherit python3 gnome2
 
 NAME="gedit"
-VERSION=3.22.0
+VERSION=3.22.1
 RELEASE=1
 CATEGORY="Editors"
 SUMMARY="Text editor for the GNOME Desktop"
